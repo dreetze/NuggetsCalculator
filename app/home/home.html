@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Log in page">
+	<meta name="author" content="Nico">
+	<link rel="icon" href="../../../../favicon.ico"> <!-- to change -->
+
+	<title>Log in</title>
+
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Custom styles for this template -->
+	<link rel="stylesheet" type="text/css" href="../css/signin.css">
+
+  </head>
+
+	<body class="text-center" ng-controller="HomeCtrl">
+		<form class="form-signin" name="signinForm" role="form">
+			<h1 class="h3 mb-3 font-weight-normal">Please Signin</h1>
+			<div class="form-group" ng-class="{ 'has-error' : signinForm.email.$invalid }">
+				<label for="inputEmail" class="sr-only">Email address</label>
+				<input ng-model="user.email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+				<p class="help-block" ng-show="signinForm.email.$invalid">Enter a valid email</p>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error' : signinForm.password.$invalid }">
+				<label for="inputPassword" class="sr-only">Password</label>
+				<input ng-minlength="8" ng-model="user.password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+				<p class="help-block" ng-show="signinForm.password.$error.minlength">Min password length is 8 characters.</p>
+			</div>
+			<button ng-click="SignIn($event)" ng-disabled="!user.email || !user.password" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			<p class="mt-5 mb-3 text-muted">&copy; 2018-2019</p>
+		</form>
+	</body>
+</html>
