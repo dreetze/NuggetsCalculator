@@ -13,14 +13,14 @@ angular.module( 'myApp.home', [ 'ngRoute', 'firebase' ] )
 // Home controller
 .controller( 'HomeCtrl', [ '$scope', '$location', 'CommonProp', '$firebaseAuth', function( $scope, $location, CommonProp, $firebaseAuth ) {
 	
-	//var firebase = new Firebase();
+	var auth = $firebaseAuth();
 
  	$scope.SignIn = function( $event ) {
  		//event.preDefault();
  		var username = $scope.user.email;
  		var password = $scope.user.password;
 
- 		firebase.auth().signInEmailandPassword({ //je sais que cette ligne là pue mais je tente
+ 		auth.signInEmailandPassword( { 
  			email: username,
  			password: password
  		})
