@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Log in page">
+		<meta name="author" content="Nico">
+		<link rel="icon" href="../../../../favicon.ico"> <!-- to change -->
+
+		<title>Add Resource</title>
+
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<!-- Custom styles for this template -->
+		<link rel="stylesheet" type="text/css" href="../css/signin.css">
+	</head>
+
+	<body class="text-center" ng-controller="addResource">
+		<div class="container-fluid">
+			<form>
+				<div class="form-group">
+					<label for="resourceTitle">Title</label>
+					<input ng-model="resource.title" id="resourceTitle" type="text" name="resourceTitle" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="resourceFactor">Coefficient</label>
+					<input ng-model="resource.factor" id="resourceFactor" type="text" name="resourceFactor" class="form-control">
+				</div>
+				<button ng-disabled="!resource.title || !resource.factor" type="submit" class="btn btn-primary">Ajouter</button>
+			</form>
+		</div>
+	</body>
+</html>
